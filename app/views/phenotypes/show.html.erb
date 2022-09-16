@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @phenotype %>
+
+<div>
+  <%= link_to "Edit this phenotype", edit_phenotype_path(@phenotype) %> |
+  <%= link_to "Back to phenotypes", phenotypes_path %>
+
+  <%= button_to "Destroy this phenotype", @phenotype, method: :delete %>
+</div>

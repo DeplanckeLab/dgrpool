@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Phenotypes</h1>
+
+<div id="phenotypes">
+  <% @phenotypes.each do |phenotype| %>
+    <%= render phenotype %>
+    <p>
+      <%= link_to "Show this phenotype", phenotype %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New phenotype", new_phenotype_path %>

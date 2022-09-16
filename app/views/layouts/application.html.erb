@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DGRPool</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body id='body_container'>
+
+    <%= render :partial => "shared/header_nav" %>
+    
+    <%= yield %>
+
+    <%= render :partial => 'shared/footer' %>
+    
+  </body>
+</html>
