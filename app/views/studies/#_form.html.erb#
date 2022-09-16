@@ -1,3 +1,9 @@
+   <div class="form-group row">
+    <%= label_tag "Title", nil,  {:class => 'col-sm-2 col-form-label'} %>
+    <div class="col-sm-10">
+      <%= form.text_field :title, {:class => 'form-control'} %>
+    </div>
+  </div>
 <%= form_with(model: study) do |form| %>
   <% if study.errors.any? %>
     <div style="color: red">
