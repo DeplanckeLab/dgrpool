@@ -18,6 +18,7 @@ Rails.application.configure do
   config.server_timing = true
 
   config.hosts << "dgrp.epfl.ch"
+  config.force_ssl = true
   
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
