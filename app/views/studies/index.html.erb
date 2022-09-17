@@ -2,6 +2,7 @@
 
 <h1>Studies</h1>
 
+<!--
 <div id="studies">
   <% @studies.each do |study| %>
     <%= render study %>
@@ -11,4 +12,58 @@
   <% end %>
 </div>
 
+-->
+
+<table id='studies'> <!-- class="table" data-controller="datatable">-->
+  <thead>
+  <tr>
+    <th>Title</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @studies.each do |s| %>
+    <tr>
+      <td><%= s.title %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to "New study", new_study_path %>
+
+<%= javascript_tag do %>
+
+  document.addEventListener('DOMContentLoaded', function () {
+    let table = new DataTable('#studies')
+  });
+
+
+
+/*window.addEventListener('load', 
+  function() { 
+$("#studies").DataTable()
+});
+*/
+/*window.onload = function() {
+$("#studies").DataTable()
+}
+*/
+
+/*import { Controller } from '@hotwired/stimulus'
+ 
+ export default class extends Controller {
+   connect () {
+        document.addEventListener('DOMContentLoaded', function () {
+        let table = new DataTable('#studies');
+     });
+   }
+ }
+*/
+//let table = new DataTable('#studies')
+//const table = $(this.element.querySelector('studies'))
+
+// prepare options, optional add remote processing (not yet implemented)
+
+//let dtable = $(table).DataTable()
+<% end %>
