@@ -3,7 +3,11 @@ class StudiesController < ApplicationController
 
   # GET /studies or /studies.json
   def index
-    @studies = Study.all
+    if admin?
+      @studies = Study.all
+    else
+      @studies = Study.joins(:status).where(:status => {:name => ['accepted', 'integrated']})
+    end
   end
 
   # GET /studies/1 or /studies/1.json
@@ -37,7 +41,7 @@ class StudiesController < ApplicationController
   # PATCH/PUT /studies/1 or /studies/1.json
   def update
     respond_to do |format|
-      if @study.update(study_params)
+      if admin? and @study.update(study_params)
         format.html { redirect_to study_url(@study), notice: "Study was successfully updated." }
         format.json { render :show, status: :ok, location: @study }
       else
@@ -49,8 +53,9 @@ class StudiesController < ApplicationController
 
   # DELETE /studies/1 or /studies/1.json
   def destroy
-    @study.destroy
-
+    if admin?
+      @study.destroy
+    end
     respond_to do |format|
       format.html { redirect_to studies_url, notice: "Study was successfully destroyed." }
       format.json { head :no_content }
