@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   helper_method :admin?,  :accessible?
 
   def admin_emails
-    return ['romain.rochepeau@epfl.ch', 'jasper.deplancke@epfl.ch', 'nathan.fiorellino@epfl.ch', 'fabrice.david@epfl.ch']
+    return ['romain.rochepeau@epfl.ch', 'jasper.deplancke@epfl.ch', 'nathan.fiorellino@epfl.ch', 'fabrice.david@epfl.ch','vincent.gardeux@epfl.ch']
   end
 
   def admin?

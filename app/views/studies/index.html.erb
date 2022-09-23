@@ -16,14 +16,18 @@
 
 <table id='studies'> <!-- class="table" data-controller="datatable">-->
   <thead>
-  <tr>
-    <th>Title</th>
-  </tr>
+    <tr>
+      <th>ID</th>
+      <th>Reference</th>
+      <th>Status</th>
+    </tr>
   </thead>
   <tbody>
     <% @studies.each do |s| %>
     <tr>
-      <td><%= s.title %></td>
+      <td><%= s.id %></td>
+      <td><%= raw display_reference(s) %></td>
+      <td><%= raw display_status(s) %></td>
     </tr>
     <% end %>
   </tbody>
@@ -34,11 +38,16 @@
 
 <%= javascript_tag do %>
 
+
   document.addEventListener('DOMContentLoaded', function () {
     let table = new DataTable('#studies')
   });
 
-
+/*
+$(document).ready(function(){
+ let table = new DataTable('#studies')
+})
+*/
 
 /*window.addEventListener('load', 
   function() { 

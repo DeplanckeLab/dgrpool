@@ -13,17 +13,24 @@ primary key (id)
 create table statuses(
 id serial,
 name text, -- submitted, validated, rejected, integrated
-css_class text
+css_class text,
+primary key (id)
 );
 
 create table studies(
 id serial,
 title text,
+first_author text,
 authors text,
+authors_json text,
 abstract text,
 journal_id int references journals,
+volume text,
+issue text,
 pmid int,
 doi text,
+year int,
+published_at timestamp,
 created_at timestamp,
 updated_at timestamp,
 status_id int references statuses,
@@ -38,6 +45,7 @@ create index studies_doi_idx on studies(doi);
 create table categories(
 id serial,
 name text,
+num int,
 description text,
 user_id int references users,
 created_at timestamp,
@@ -100,7 +108,7 @@ phenotype_keyword_id int references phenotype_keywords
 );
 
 create table ontologies( -- FBcv, FBbt, etc...
-id serial
+id serial,
 name text,
 tag text,
 file_url text, --file url (obo if exists)
