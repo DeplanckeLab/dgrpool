@@ -65,6 +65,6 @@ class StudiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def study_params
-      params.fetch(:study, {})
+      params.fetch(:study).permit(:title, :authors_json, :abstract, :journal_id, :pmid, :doi, :first_author, :status_id, :submitter_id, :validator_id, :volume, :issue)
     end
 end
