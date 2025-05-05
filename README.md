@@ -7,6 +7,7 @@ Vincent Gardeux, Roel PJ Bevers, Fabrice PA David, Emily Rosschaert, Romain Roch
 
 # Online Website
 [https://dgrpool.epfl.ch/](https://dgrpool.epfl.ch/)
+There is a specific GitHub page for the DGRPool website if you want to report an issue, or download the sources for the web server: [https://github.com/DeplanckeLab/dgrpool_web](https://github.com/DeplanckeLab/dgrpool_web)
 
 # Reproducibility
 ## Phenotyping data
